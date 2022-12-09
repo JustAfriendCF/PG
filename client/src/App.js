@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo , useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { render } from "react-dom";
 import UsersList from './components/users/UsersList'
 import ProductsList from './components/products/ProductsList'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Modal from "react-modal";
 
 import home_page from './components/pages/home_page';
 // import { Container, Button, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
@@ -26,11 +27,24 @@ import CheckerComponent from './components/pages/sub_pages/checker'
 const App = () => {
   console.log('localStorage.user', localStorage.user);
   // const [user, setUser] = useState(localStorage.user != null ? JSON.parse(localStorage.user) : { id: user.id, firstName: user.firstName });
-  const [user, setUser] = useState('esther');
+  const [user, setUser] = useState('');
   const f = () => {
     setUser({});
 
   }
+  useEffect(() => {
+    Modal.setAppElement('#root');
+
+    if (localStorage.getItem("user")) {
+        const user = JSON.parse(localStorage.getItem("user"));
+        console.log('user', user);
+        setUser(user);
+        // put in the local storage
+        // alert("ברוך הבא: " + user.firstName)
+        console.log(user);
+
+    }
+}, []);
   // const [cart, setCart] = useState({});
   // const value = useMemo(() => ({ user, setUser }), [user, setUser]);
   // const value = useMemo(() => ({ user, setUser },{cart, setCart}), [user, setUser,cart, setCart]);
@@ -46,6 +60,7 @@ const App = () => {
           <UserContext.Provider value={value}>
             <Navbar f={f} />
             <Switch>
+              <Route path='/' exact component={home_page} />
               <Route path='/home_page' exact component={home_page} />
               <Route path='/info' component={info} />
               <Route path='/qAa' component={qAa} />

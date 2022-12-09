@@ -7,8 +7,14 @@ order_Controller = app => {
 
 
     app.get(router + '/get', (req, res) => {
-        order_BLL.get((order_s) => {
-            res.send(order_s);
+        order_BLL.get((result) => {
+            res.send(result);
+        });
+    })
+
+    app.get(router + '/getProductInOrder', (req, res) => {
+        order_BLL.getProductInOrder((result) => {
+            res.send(result);
         });
     })
 

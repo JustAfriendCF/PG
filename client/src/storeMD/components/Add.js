@@ -10,11 +10,14 @@ import { addToCart } from "../actions/cartActions";
 import UserContext from '../../UserContext';
 import axios from "axios";
 // const { user, setUser } = useContext(UserContext);
+import add1 from '../../images/home_page_adds/add1.jpg'
+import './style.css'
 class Add extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            // product: {id:'1', name_:"jjj", price:30, image:add1},
             product: null,
         };
     }
@@ -53,28 +56,29 @@ class Add extends Component {
         const { product } = this.state;
         return (
             <>
-                <div>
-                    <h1>  !רק בשבילך</h1>
-                    {product && <li key={product.id}>
-                        <div className="product">
+                <div className="only-for-u-div">
+                    <h1 className="only-for-you"> רק בשבילך!</h1>
+                    {product && <div key={product.id}>
+                        <div className="main-product">
                             <a
                                 href={"#" + product.id}
                                 onClick={() => this.openModal(product)}
                             >
-                                <img src={this.getUrl(product.image)} alt={product.name_}></img>
-                                <p>{product.name_}</p>
+                                {/* <img className="img-for-u" src={product.image} alt={product.name_}></img> */}
+                                <img className="img-for-u" src={this.getUrl(product.image)} alt={product.name_}></img>
+                                <p className="name-product-for-u">{product.name_}</p>
                             </a>
                             <div className="product-price">
-                                <div>{formatCurrency(product.price)}</div>
+                                <div className="price-for-u">{formatCurrency(product.price)}</div>
                                 <button
                                     onClick={() => this.props.addToCart(product)}
-                                    className="button primary"
+                                    className="btn-for-u"
                                 >
                                     הוספה לעגלה
                                 </button>
                             </div>
                         </div>
-                    </li>
+                    </div>
                     }
                 </div>
 

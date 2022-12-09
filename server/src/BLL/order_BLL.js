@@ -1,5 +1,25 @@
 const order_BLL = require("../BLL/order_BLL");
+const generalDB = require("../DAL/generalDB");
 
+ const get = (cb) => {
+    return new Promise((resolve, reject) => {
+        generalDB.getTable('order_', (rows) => {
+            if (cb) cb(rows);
+            resolve(rows);
+        })
+    });
+}
+ const getProductInOrder = (cb) => {
+    return new Promise((resolve, reject) => {
+        generalDB.getTable('productinorder', (rows) => {
+            if (cb) cb(rows);
+            resolve(rows);
+        })
+    });
+}
+module.exports = {
+    get, getProductInOrder
+}
 
 order_Controller = app => {
 
@@ -30,4 +50,3 @@ order_Controller = app => {
 
 
 }
-module.exports = order_Controller;

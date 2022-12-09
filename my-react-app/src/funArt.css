@@ -1,0 +1,20 @@
+.symbol{
+    background-color: black;
+    color: white;
+    }
+    .file-upload-button{
+        background-color: yellow;
+    }
+    .imageLook{
+        /* width: 20%; */
+    }
+    .image{
+        display:list-item;
+    }
+    .firstPlace{
+    display: block;
+    right: 30%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    }

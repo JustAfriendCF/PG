@@ -20,13 +20,21 @@ textarea {
   font-size: 1.6rem;
 }
 
+.btn-login {
+  background-color: #009688 !important;
+}
+
+button,
+a {
+  cursor: pointer !important;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header"
     "main"
     "footer";
-  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-rows: 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
 }
@@ -78,6 +86,7 @@ footer {
 
 .sidebar {
   flex: 1 20rem;
+  background-color: #009688;
 }
 
 /* products */
@@ -92,9 +101,29 @@ footer {
 }
 
 .products li {
-  flex: 0 1 29rem;
-  height: 47rem;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border-bottom: 2px solid #00968736;
+  ;
+  background: #8080800e;
+  border-radius: 5px;
+  box-shadow: 2px 0px 0 rgb(0 0 0 / 11%), 0 1px 3px 0 rgb(0 150 136 / 47%);
+}
+
+.all-filters {
+  color: #009688 !important;
+  margin-bottom: 20px;
+}
+
+select {
+  box-shadow: 2px 0px 0 rgb(0 0 0 / 11%), 0 1px 3px 0 rgb(0 150 136 / 47%);
+  border-radius: 5px;
+  border-bottom: 2px solid #00968736;
+
 }
 
 .product {
@@ -114,6 +143,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 
 .productPrice {
@@ -144,7 +174,23 @@ footer {
 }
 
 .button.primary {
-  background-color: yellow;
+  background-color: #009688 !important;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button.primary:hover {
+  background-color: #7c8282 !important;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Filter */
@@ -166,6 +212,13 @@ footer {
   margin: 1rem;
   display: flex;
 }
+
+.cart-finish {
+  padding: 2rem 20%;
+  margin: 1rem;
+  display: flex;
+}
+
 
 .cart-header {
   border-bottom: 0.1rem #c0c0c0 solid;
@@ -241,6 +294,8 @@ input {
   flex-wrap: wrap;
   justify-content: space-between;
   max-height: 96vh;
+  align-content: space-around;
+  justify-content: space-between
 }
 
 .product-details img {
@@ -252,6 +307,10 @@ input {
 .product-details-description_ {
   flex: 1 1;
   margin: 1rem;
+  width: max-content;
+  text-align: center;
+  font-size: x-large;
+  margin: auto;
 }
 
 .close-modal {
@@ -309,5 +368,230 @@ th {
 }
 
 .navCss {
-  background-color: yellow;
+  background-color: #009688;
+  font-size: 18px;
+  background: url('../images/back2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+}
+
+.btn-add {
+  height: 50px;
+  width: 200px;
+  margin: 20px;
+  font-size: 22px !important;
+  background-color: #27b1b1 !important;
+}
+
+.canvas-title {
+  font-size: 22px !important;
+  color: #009688;
+  text-align: right !important;
+  font-weight: bold !important;
+  margin: 20px 0 !important;
+  text-align: end !important;
+  margin-left: 100px !important;
+}
+
+.lable-form {
+  margin: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-input {
+  height: 40px !important;
+}
+
+.form-create {
+  text-align: end;
+}
+
+.btn-send {
+  background-color: #009688 !important;
+}
+
+.card-container {
+  font-size: 16px;
+  font-size: 16px;
+  margin: 10px;
+  width: 300px !important;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 20px !important;
+  color: #009688 !important;
+  font-weight: bold !important;
+}
+
+.div-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-container {
+  overflow: auto;
+}
+
+.icon-check {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.header-artist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.title-artist {
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 1px 1px yellow;
+}
+
+.title-artist2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 1px rgb(11, 123, 110);
+  text-align: center;
+  margin: 40px;
+}
+
+.card-body-checker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title-orders {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: right;
+  margin: 50px 30px;
+  text-shadow: 1px 1px yellow;
+}
+
+.orders-container {
+  width: 90%;
+  margin: auto !important;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+
+.current-order {
+  border: 1px solid #009688;
+  padding: 20px;
+  height: 450px;
+  width: 300px !important;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.alert-content {
+  font-size: 20px;
+  text-align: center;
+}
+
+.accordion-button {
+  font-size: 16px !important;
+}
+
+.accor-body {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.accor-header {
+  color: #009688 !important;
+  font-weight: bold;
+}
+
+.accordion-button::after {
+  margin-right: auto;
+  margin-left: initial !important;
+}
+
+.date-order {
+  margin-right: 20px;
+  font-weight: 400 !important;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-detail-title {
+  color: black;
+  font-weight: bold;
+}
+
+.col-2-t {
+  margin-left: 10px;
+}
+
+.status-true {
+  color: green;
+  font-size: 20px;
+}
+
+.status-false {
+  color: red;
+  font-size: 20px;
+}
+
+.card-checker:hover {
+  transform: translateY(-4px);
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid yellow;
+}
+
+.title-checker {
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 1px 1px yellow;
+  text-align: right;
+  margin: 20px;
+}
+
+.icon-add-img {
+  font-size: 60px;
+  color: #1c9da1;
+  cursor: pointer;
+}
+
+.package-img-img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.package-img-div {
+  flex-direction: column;
+}
+
+.lable-upload-img {
+  display: flex;
+  flex-direction: row;
+  margin-top: -30px;
+}
+
+.none-img {
+  display: none;
+}
+
+.img-title-choose {
+  font-size: 18px;
+  font-weight: bold;
 }

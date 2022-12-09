@@ -3,15 +3,25 @@ import { connect } from "react-redux";
 import { filterProducts, sortProducts, filterProductsColor, filterProductsCategory } from "../actions/productActions";
 
 class Filter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // arr:[{id:'1',name:"ddd"}, {id:'1',name:"ddd"}, {id:'1',name:"ddd"}]
+      product: null,
+    };
+  }
   render() {
+    // return !this.state.arr ? (
+
     return !this.props.filteredProducts ? (
       <div>Loading...</div>
     ) : (
       <div className="filter">
-        <div className="filter-result">
-          {this.props.filteredProducts.length} Products
+        <div className="filter-result all-filters">
+          {/* {this.state.arr.length} Products */}
+          {this.props.filteredProducts.length} מוצרים
         </div>
-        <div className="filter-sort">
+        <div className="filter-sort all-filters">
           מיין על פי{" "}
           <select
             value={this.props.sort}
@@ -27,7 +37,7 @@ class Filter extends Component {
             <option value="highest">מחיר גבוה</option>
           </select>
         </div>
-        <div className="filter-size">
+        <div className="filter-size all-filters">
           מידה{" "}
           <select
             value={this.props.size}
@@ -42,7 +52,7 @@ class Filter extends Component {
             <option value="18">18</option>
           </select>
         </div>
-        <div className="filter-color">
+        <div className="filter-color all-filters">
           צבע{" "}
           <select
             value={this.props.color}
@@ -51,15 +61,15 @@ class Filter extends Component {
             }
           >
             <option value="">כל הצבעים</option>
-            <option value="black">שחור</option>
-            <option value="yellow">צהוב</option>
-            <option value="pink">ורוד</option>
-            <option value="red">אדום</option>
-            <option value="blue">כחול</option>
-            <option value="white">לבן</option>
+            <option value="black" style={{ color: 'black' }}>שחור</option>
+            <option value="yellow" style={{ color: '#c6c60d' }}>צהוב</option>
+            <option value="pink" style={{ color: 'pink' }}>ורוד</option>
+            <option value="red" style={{ color: 'red' }}>אדום</option>
+            <option value="blue" style={{ color: 'blue' }}>כחול</option>
+            <option value="white" style={{ color: 'gray' }}>לבן</option>
           </select>
         </div>
-        <div className="filter-category">
+        <div className="filter-category all-filters">
           קטגוריה{" "}
           <select
             value={this.props.category}

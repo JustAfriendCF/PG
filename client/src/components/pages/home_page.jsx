@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react';
 import SimpleImageSlider from "react-simple-image-slider";
 // import add1 from '../../images/home_page_adds/add1.jpg';
@@ -5,7 +6,8 @@ import SimpleImageSlider from "react-simple-image-slider";
 import add3 from '../../images/home_page_adds/add3.png';
 import add4 from '../../images/home_page_adds/add4.png';
 import add5 from '../../images/home_page_adds/add5.png';
-
+import Carousel from 'react-bootstrap/Carousel';
+import './CSS_page/login.css'
 import { UserContext } from '../../UserContext';
 
 const images = [
@@ -26,10 +28,24 @@ const images = [
 const home_page = () => {
   return (
     <>
-      <div>
+    <Carousel interval={2000}>
+      {images?.map((img)=>
+      <Carousel.Item>
+      <img
+        className="d-block w-100"
+        src={img.url}
+        alt="First slide"
+      />
+    </Carousel.Item>
+      )}
+      
+
+    
+    </Carousel>
+      {/* <div>
         <SimpleImageSlider
           width={'100%'}
-          height={710}
+          // height={710}
           images={images}
           showBullets={true}
           showNavs={true}
@@ -37,7 +53,7 @@ const home_page = () => {
       </div>
       <div>
 
-      </div>
+      </div> */}
     </>
 
 

@@ -72,8 +72,12 @@ const imageForTheCompetitionSetChecker = (imageForTheCompetitionId, checkerId, c
     });
 }
 const addLike = (imageForTheCompetition, cb) => {
-    let newimageForTheCompetition = validation(imageForTheCompetition);
-    generalDB.insert(nameTable, newimageForTheCompetition, (insertId) => {
+    const columnDetails = {
+        id: imageForTheCompetition.id,
+        name: 'likesNum',
+        value: imageForTheCompetition.likesNum
+    }
+    generalDB.updateColumnByNamen(nameTable, columnDetails, (insertId) => {
         cb(insertId);
     });
 }
@@ -98,7 +102,7 @@ const validation = (imageForTheCompetition) => {
 }
 
 module.exports = {
-    get, insert, update, getNotChecked, getByC, imageForTheCompetitionSetChecker
+    get, insert, update, getNotChecked, getByC, imageForTheCompetitionSetChecker, addLike
 }
 
 

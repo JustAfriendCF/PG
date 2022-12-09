@@ -1,0 +1,243 @@
+.img-product {
+    width: 200px;
+    height: 150px;
+    border: 2px solid #48bbaf33
+}
+
+.product-item {}
+
+.img-for-u {
+    height: 200px;
+    /* border-radius: 30px; */
+    /* border: 2px solid #20658d; */
+}
+
+.only-for-you {
+    text-align: center;
+    margin: 30px 0;
+    color: #ffffff;
+    font-weight: bold;
+    color: linear-gradient(180.01deg, #0e93a1 0%, #48bbb0 25.87%, #a9ffde 65.92%, #f5fdff 100%);
+    ;
+}
+
+.main-product {
+    margin: 0 30px;
+    /* background-color: #80cbc4; */
+}
+
+.name-product-for-u {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(254, 254, 254);
+}
+
+.btn-for-u {
+    width: 130px;
+    font-size: 12px;
+    background-color: black;
+    color: #80cbc4;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.price-for-u {
+    color: red;
+    font-weight: bold;
+}
+
+.only-for-u-div {
+    border: 5px dotted white;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-add-to-cart {
+    background-color: black;
+    color: #faf5f5;
+    font-size: 20px;
+    font-weight: bold;
+    left: 0;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.btn-add-to-cart:hover {
+    transition: all 0.2s ease-in-out;
+    background: #0e93a1;
+}
+
+.btn-add-to-cart:active {
+    transition: all 0.2s ease-in-out;
+    background: #0e93a1;
+}
+
+.all-filters {
+    font-size: 16px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    text-align: right;
+    color: #af936e;
+    font-weight: bold;
+}
+
+.button-remove-from-cart {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 2px solid #009688;
+    font-weight: bold;
+}
+
+.li-product {
+    padding: 20px;
+    margin-bottom: 35px !important;
+    border-bottom: 2px solid #00968736;
+    ;
+    background: #8080800e;
+    border-radius: 5px;
+    box-shadow: 2px 0px 0 rgb(0 0 0 / 11%), 0 1px 3px 0 rgb(0 150 136 / 47%);
+
+}
+
+.price-box {
+    margin-right: 15px;
+}
+
+.count-prod {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.count-prod.b {
+    column-gap: 10px;
+}
+
+.style-static {
+    position: fixed;
+    bottom: 0;
+    /* text-align: center; */
+    right: auto;
+    left: 0;
+    /* justify-content: center; */
+    /* display: flex; */
+    background: #ffffffd9;
+    /* width: 100%; */
+    /* border-top: 3px solid #00968870; */
+    border-radius: 10px;
+}
+
+.product-price-cart {
+    font-size: 22px !important;
+    display: grid !important;
+    align-items: center;
+    grid-template-columns: max-content 1fr 0.4fr;
+    margin: 10px 10% 10px 30%;
+    justify-content: space-between;
+}
+
+/* .img-cart-div {
+    width: 200px;
+    height: 150px;
+} */
+
+.img-cart {
+    width: 200px !important;
+    height: 150px;
+    border: 2px solid #48bbaf33
+}
+
+.btn-finish-buy {
+    height: 50px !important;
+    font-weight: bold;
+    width: 300px;
+}
+
+.total-line {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #009688;
+    font-size: 18PX;
+}
+
+.lable-pay {
+    color: #009688;
+    font-size: 16px;
+    text-align: right;
+    font-weight: 500;
+    margin: 10px;
+}
+
+.input-to-pay {
+    border: 2PX solid;
+    border-radius: 15PX;
+}
+
+.success-payment {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-size: 20px;
+    padding: 20px 20%;
+    font-weight: bold;
+}
+
+.title-success-payment {
+    color: #009688;
+    margin-top: 10px;
+    font-weight: bold !important;
+    font-size: 22px !important;
+}
+.form-create{
+    text-align: right;
+}
+
+.padding {
+    padding: 20px;
+    text-align: right;
+    align-items: flex-start;
+}
+
+.current-item-order {
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: baseline;
+    padding: 20px 20%;
+    margin: auto;
+}
+
+.btn-size {
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 30px;
+    height: 35px;
+    font-weight: bold;
+    color: #009688;
+    border-color: #009688;
+}
+
+.total-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    color: #009688;
+    border: 1px solid;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+}

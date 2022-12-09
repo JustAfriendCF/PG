@@ -86,9 +86,9 @@ imageForTheCompetitionController = app => {
 
     app.post(`${router}/addlike`, (req, res) => {
         try {
-            let imageForTheCompetition = req.body;
-            imageForTheCompetitionBLL.insert(imageForTheCompetition, (imageForTheCompetitionId) => {
-                res.send({ insertId: imageForTheCompetitionId });
+            const { imageForTheCompetition } = req.body;
+            imageForTheCompetitionBLL.addLike(imageForTheCompetition, (imageForTheCompetitionId) => {
+                res.send({ updatedId: imageForTheCompetitionId });
             });
         } catch (ex) {
             return res.status(500)

@@ -1,20 +1,101 @@
-.symbol{
-background-color: black;
-color: white;
+.symbol {
+    background-color: black;
+    color: white;
 }
-.file-upload-button{
+
+.file-upload-button {
     background-color: yellow;
 }
-.imageLook{
-    /* width: 20%; */
+
+.img-look {
+    height: 250px;
+    width: 350px;
+    margin: 30px 40px;
 }
-.image{
-    display:list-item;
+
+.imageLook {
+    height: 200px;
+    width: 260px;
+    border: 2px solid black;
 }
-.firstPlace{
-display: block;
-right: 30%;
-background-color: black;
-color: white;
-text-align: center;
+
+
+.image {
+    display: list-item;
+}
+
+.firstPlace {
+    background: url('../../../images/back.png');
+    color: #009688 ;
+    text-shadow: 1.5px 0 0 white;
+    text-align: center;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 5px solid #30b9b9e0;
+    padding:  15px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 5px 0px 0 rgb(0 0 0 / 11%), 0 5px 3px 0 rgb(0 150 136 / 47%);
+}
+
+.form-upload-img {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.like-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.liked-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 22px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.product-details {
+    padding: 20%;
+    margin: 20px;
+    width: 290px !important;
+    height: 300px !important;
+    display: grid !important;
+    grid-template-columns: max-content 1fr;
+    column-gap: 50px ;
+
+}
+
+.div-product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+.div-container{
+
+} */
+.winner-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
 }

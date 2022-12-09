@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 import '../pages/CSS_page/login.css'
 import userService from '../../services/userService';
 import UserContext from '../../UserContext';
 import { useHistory } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 const mode = 'login';
 
 //const signUp = () => {
@@ -24,11 +25,11 @@ class LoginComponent extends React.Component {
                 <section className={`form-block form-block--is-${this.state.mode}`}>
                     <header className="form-block__header">
                         <h1>{this.state.mode === 'login' ? 'ברוכים השבים' : 'ברוכים הבאים'}</h1>
-                        <span>{this.state.mode === 'login' ? '  אין' : 'יש'} לכם חשבון? לחצו כאן &#8594;</span>
-                        <div className="form-block__toggle-block">
+                        <span className='span-click-me' onClick={this.toggleMode.bind(this)}>{this.state.mode === 'login' ? '  אין' : 'יש'} לכם חשבון? לחצו כאן &#8594;</span>
+                        {/* <div className="form-block__toggle-block">
                             <input id="form-toggler" type="checkbox" onClick={this.toggleMode.bind(this)} />
                             <label htmlFor="form-toggler"></label>
-                        </div>
+                        </div> */}
                     </header>
                     <LoginForm mode={this.state.mode} onSubmit={this.props.onSubmit} />
                 </section>
@@ -44,6 +45,7 @@ const LoginForm = (props) => {
     const [userDetailsLogin, setUserDetailsLogin] = useState({ email: "", password: "" });
     const [userDetailsLogUp, setUserDetailsLogUp] = useState({ fullname: '', email: '', createpassword: '', repeatPassword: '' });
 
+ 
     const onChangeLogin = (name, e) => {
         setUserDetailsLogin({ ...userDetailsLogin, [name]: e.target.value })
     }
@@ -57,8 +59,11 @@ const LoginForm = (props) => {
 
             <div className="form-block__input-wrapper">
                 {/* sign in */}
+
                 <div className="form-group form-group--login">
-                    <Input value={userDetailsLogin.email} type="email" id="username" label="אימייל" disabled={props.mode === 'signup'} onChange={(e) => onChangeLogin('email', e)} />
+                    {/* <p className='p-title'>Enter Email</p> */}
+                    <Input value={userDetailsLogin.email} placeholder='fff' type="email" id="username" label="אימייל" disabled={props.mode === 'signup'} onChange={(e) => onChangeLogin('email', e)} />
+                    {/* <p className='p-title'>Enter Password</p> */}
                     <Input value={userDetailsLogin.password} type="password" id="password" label="סיסמא" disabled={props.mode === 'signup'} onChange={(e) => onChangeLogin('password', e)} />
                 </div>
                 {/* <div className="form-group form-group--login">
@@ -86,11 +91,14 @@ const SignUp = (props) => {
 
     const { user, setUser } = useContext(UserContext);//get the curent user from the context
     const history = useHistory();
+    const [isLogin, setIsLogin] = useState('');
+
 
     return (
         <>
             {/* <h1>{user.id}</h1> */}
             <div className={`app app--is-${mode}`}>
+                {isLogin !== '' && <Alert variant='success' className='alert-info-login'>{isLogin}</Alert>}
 
                 <LoginComponent
                     mode={mode}
@@ -108,21 +116,24 @@ const SignUp = (props) => {
                                     // put in the local storage
                                     const json = JSON.stringify(user); //set the context to storage
                                     localStorage.setItem("user", json); ////set the context to storage
-
-                                    alert("ברוך הבא: " + user.firstName)
+                                    // alert("ברוך הבא: " + user.firstName)
+                                    setIsLogin("ברוך הבא: " + user.firstName)
                                     console.log(user);
                                     if (user.firstName == 'dvora')
                                         history.push('/artist');
                                     else if (type == 'checker')
                                         // לאם זה בודק-
                                         history.push('/checker');
+                                        else history.push('/home_page');
 
                                 }
                                 else if (type == 'blockUser') {
-                                    alert('Sorry, you are blocked from the system')
+                                    setIsLogin('Sorry, you are blocked from the system')
+                                    // alert('Sorry, you are blocked from the system')
                                 }
                                 else {
-                                    alert('the user not found');
+                                    setIsLogin('the user not found')
+                                    // alert('the user not found');
                                 }
 
                                 // להכניס לקונטקסט
@@ -135,13 +146,16 @@ const SignUp = (props) => {
                                 if (ok) {
                                     setUser(user);
                                     if (type == 'checker')
-                                        alert('נרשמת בהצלחה כבודק המתן לאישור מנהל')
+                                        setIsLogin('נרשמת בהצלחה כבודק המתן לאישור מנהל')
+                                    // alert('נרשמת בהצלחה כבודק המתן לאישור מנהל')
                                     else
-                                        alert(`נרשמת בהצלחה למערכת`)
+                                        setIsLogin(`נרשמת בהצלחה למערכת`)
+                                    // alert(`נרשמת בהצלחה למערכת`)
 
                                 }
                                 else {
-                                    alert('המשתמש אינו קיים');
+                                    setIsLogin('המשתמש אינו קיים')
+                                    // alert('המשתמש אינו קיים');
                                 }
                             }
                             //לשלוח לשרת

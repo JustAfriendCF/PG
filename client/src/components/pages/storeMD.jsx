@@ -11,11 +11,7 @@ const storeMD = () => {
         <Provider store={store}>
             {/* <BrowserRouter> */}
             <div className="grid-container">
-                <header>
-                    חנות
-                    {/* <Link to="/storeMD/">React Shopping Cart</Link>
-                    <Link to="/storeMD/admin">Admin</Link> */}
-                </header>
+               
                 <main>
                     <Route path="/storeMD/admin" component={AdminScreen} />
                     <Route path="/storeMD/" component={MainShop} exact />
